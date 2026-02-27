@@ -480,14 +480,23 @@ function onSlotDragStart(e, slotIdx) {
 function onSlotDragOver(e, slotIdx) {
   e.preventDefault();
   if (state.hoverSlot !== slotIdx) {
+    // Remove hover from previous slot
+    if (state.hoverSlot !== null) {
+      const prev = document.querySelector(`[data-slot-index="${state.hoverSlot}"]`);
+      if (prev) { prev.classList.remove("hover"); prev.style.borderColor = ""; }
+    }
     state.hoverSlot = slotIdx;
-    render();
+    const el = document.querySelector(`[data-slot-index="${slotIdx}"]`);
+    if (el) { el.classList.add("hover"); el.style.borderColor = "var(--accent2)"; }
   }
 }
 
 function onSlotDragLeave(e) {
+  if (state.hoverSlot !== null) {
+    const el = document.querySelector(`[data-slot-index="${state.hoverSlot}"]`);
+    if (el) { el.classList.remove("hover"); el.style.borderColor = ""; }
+  }
   state.hoverSlot = null;
-  render();
 }
 
 function onSlotDrop(e, slotIdx) {
@@ -533,9 +542,16 @@ function onTouchMove(e) {
   const slotEl = el ? el.closest("[data-slot-index]") : null;
   const newHover = slotEl ? parseInt(slotEl.dataset.slotIndex) : null;
   if (newHover !== state.hoverSlot) {
+    // Remove hover from previous slot
+    if (state.hoverSlot !== null) {
+      const prev = document.querySelector(`[data-slot-index="${state.hoverSlot}"]`);
+      if (prev) { prev.classList.remove("hover"); prev.style.borderColor = ""; }
+    }
     state.hoverSlot = newHover;
-    render();
-    showGhost(state.dragItem.emoji, t.clientX, t.clientY);
+    if (newHover !== null) {
+      const target = document.querySelector(`[data-slot-index="${newHover}"]`);
+      if (target) { target.classList.add("hover"); target.style.borderColor = "var(--accent2)"; }
+    }
   }
 }
 
