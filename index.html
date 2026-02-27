@@ -77,9 +77,9 @@
 
   .btn-secondary {
     font-family: 'Fredoka', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    padding: 14px 40px;
+    padding: 12px 36px;
     border-radius: 50px;
     border: none;
     background: linear-gradient(135deg, var(--accent2), var(--accent3));
@@ -90,9 +90,9 @@
 
   .btn-check {
     font-family: 'Fredoka', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    padding: 14px 40px;
+    padding: 12px 36px;
     border-radius: 50px;
     border: none;
     background: linear-gradient(135deg, var(--accent4), var(--accent1));
@@ -110,32 +110,35 @@
   }
 
   /* Game layout */
-  .game-wrap { max-width: 520px; margin: 0 auto; text-align: center; padding: 24px 16px 40px; }
+  .game-wrap { max-width: 520px; margin: 0 auto; text-align: center; padding: 16px 12px 32px; }
 
-  .header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
   .header-label { font-family: 'Nunito', sans-serif; font-size: 13px; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
   .header-score { font-family: 'Nunito', sans-serif; font-size: 13px; color: var(--accent4); font-weight: 700; }
 
-  .progress-bar { width: 100%; height: 4px; border-radius: 2px; background: #3b2a6e; margin-bottom: 20px; }
+  .progress-bar { width: 100%; height: 4px; border-radius: 2px; background: #3b2a6e; margin-bottom: 14px; }
   .progress-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent1), var(--accent2)); transition: width 0.5s ease; }
 
-  .round-title { font-family: 'Fredoka', sans-serif; font-size: 28px; font-weight: 700; color: var(--text); margin-bottom: 6px; animation: slideUp 0.4s ease-out; }
-  .round-hint { font-family: 'Nunito', sans-serif; font-size: 15px; color: var(--text-muted); margin-bottom: 28px; }
+  .round-title { font-family: 'Fredoka', sans-serif; font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 4px; animation: slideUp 0.4s ease-out; }
+  .round-hint { font-family: 'Nunito', sans-serif; font-size: 14px; color: var(--text-muted); margin-bottom: 18px; }
 
   /* Timeline */
-  .timeline-labels { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 10px; }
-  .label-early { font-size: 12px; color: var(--accent3); font-weight: 700; font-family: 'Nunito'; }
-  .label-late { font-size: 12px; color: var(--accent1); font-weight: 700; font-family: 'Nunito'; }
+  .timeline-labels { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px; }
+  .label-early { font-size: 11px; color: var(--accent3); font-weight: 700; font-family: 'Nunito'; }
+  .label-late { font-size: 11px; color: var(--accent1); font-weight: 700; font-family: 'Nunito'; }
   .label-line { flex: 1; max-width: 200px; height: 2px; background: linear-gradient(90deg, rgba(103,232,249,0.4), rgba(255,107,157,0.4)); border-radius: 1px; }
 
   .slots-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
 
+  .slots-row { display: flex; gap: 6px; justify-content: center; flex-wrap: nowrap; margin-bottom: 0; }
+
   .slot {
-    width: 88px; height: 104px; border-radius: 18px;
+    width: 64px; height: 84px; border-radius: 14px;
     border: 2px dashed #4a3a7a;
     background: rgba(59, 42, 110, 0.55);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     position: relative; transition: all 0.2s ease;
+    flex-shrink: 0;
   }
   .slot.filled { background: var(--card); cursor: pointer; }
   .slot.hover { transform: scale(1.08); border-color: var(--accent2); background: rgba(192,132,252,0.15); }
@@ -146,47 +149,47 @@
   .slot.anim-pop { animation: popIn 0.25s ease-out; }
 
   .slot-number {
-    position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
-    border-radius: 10px; padding: 1px 8px;
-    font-size: 11px; font-weight: 700; color: #fff; font-family: 'Nunito';
+    position: absolute; top: -7px; left: 50%; transform: translateX(-50%);
+    border-radius: 10px; padding: 1px 6px;
+    font-size: 10px; font-weight: 700; color: #fff; font-family: 'Nunito';
   }
-  .slot-emoji { font-size: 32px; margin-bottom: 4px; cursor: grab; }
-  .slot-label { font-size: 10px; font-weight: 600; color: var(--text); text-align: center; line-height: 1.2; font-family: 'Nunito'; padding: 0 4px; }
-  .slot-year { font-size: 10px; font-weight: 700; margin-top: 2px; font-family: 'Nunito'; }
-  .slot-placeholder { font-size: 22px; opacity: 0.3; }
+  .slot-emoji { font-size: 24px; margin-bottom: 2px; cursor: grab; }
+  .slot-label { font-size: 9px; font-weight: 600; color: var(--text); text-align: center; line-height: 1.1; font-family: 'Nunito'; padding: 0 2px; }
+  .slot-year { font-size: 9px; font-weight: 700; margin-top: 1px; font-family: 'Nunito'; }
+  .slot-placeholder { font-size: 18px; opacity: 0.3; }
 
   /* Pool */
   .pool {
-    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
-    min-height: 90px; padding: 16px 12px; border-radius: 20px;
+    display: flex; gap: 6px; justify-content: center; flex-wrap: wrap;
+    min-height: 70px; padding: 12px 8px; border-radius: 16px;
     background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .pool-empty {
-    padding: 16px; border-radius: 20px;
+    padding: 12px; border-radius: 16px;
     background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
-    margin-bottom: 24px; color: var(--text-muted); font-size: 14px; font-family: 'Nunito';
+    margin-bottom: 20px; color: var(--text-muted); font-size: 13px; font-family: 'Nunito';
   }
 
   .pool-card {
-    width: 80px; height: 90px; border-radius: 16px;
+    width: 62px; height: 74px; border-radius: 12px;
     background: var(--card); border: 2px solid rgba(192,132,252,0.27);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     cursor: grab; animation: wiggle 2s ease-in-out infinite;
     transition: all 0.15s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   }
   .pool-card:hover { transform: scale(1.08) rotate(-2deg); border-color: var(--accent2); }
-  .pool-card .card-emoji { font-size: 30px; margin-bottom: 4px; }
-  .pool-card .card-label { font-size: 10px; font-weight: 600; color: var(--text-muted); text-align: center; line-height: 1.2; font-family: 'Nunito'; padding: 0 4px; }
+  .pool-card .card-emoji { font-size: 22px; margin-bottom: 2px; }
+  .pool-card .card-label { font-size: 9px; font-weight: 600; color: var(--text-muted); text-align: center; line-height: 1.1; font-family: 'Nunito'; padding: 0 2px; }
 
-  .result-text { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 16px; animation: slideUp 0.3s ease-out; }
+  .result-text { font-family: 'Fredoka', sans-serif; font-size: 19px; font-weight: 700; margin-bottom: 12px; animation: slideUp 0.3s ease-out; }
   .result-wrap { animation: slideUp 0.3s ease-out; }
 
   /* Drag ghost */
   .drag-ghost {
-    position: fixed; width: 72px; height: 72px; border-radius: 20px;
+    position: fixed; width: 56px; height: 56px; border-radius: 16px;
     background: var(--card); display: flex; align-items: center; justify-content: center;
-    font-size: 36px; z-index: 1000; pointer-events: none;
+    font-size: 28px; z-index: 1000; pointer-events: none;
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     border: 2px solid var(--accent2); opacity: 0.9;
   }
@@ -429,7 +432,7 @@ function renderGame(app) {
       <div class="progress-bar"><div class="progress-fill" style="width:${(state.roundIndex / ROUNDS.length) * 100}%"></div></div>
       <h2 class="round-title">${round.theme}</h2>
       <p class="round-hint">${round.hint}</p>
-      <div style="margin-bottom:28px">
+      <div style="margin-bottom:18px">
         <div class="timeline-labels">
           <span class="label-early">EARLIEST</span>
           <div class="label-line"></div>
@@ -554,15 +557,15 @@ function showGhost(emoji, x, y) {
   if (!g) return;
   g.textContent = emoji;
   g.style.display = "flex";
-  g.style.left = (x - 36) + "px";
-  g.style.top = (y - 36) + "px";
+  g.style.left = (x - 28) + "px";
+  g.style.top = (y - 28) + "px";
 }
 
 function moveGhost(x, y) {
   const g = document.getElementById("drag-ghost");
   if (!g) return;
-  g.style.left = (x - 36) + "px";
-  g.style.top = (y - 36) + "px";
+  g.style.left = (x - 28) + "px";
+  g.style.top = (y - 28) + "px";
 }
 
 function hideGhost() {
